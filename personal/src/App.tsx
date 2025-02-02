@@ -12,7 +12,6 @@ function App() {
             <Route path="/projects" element={<FrontPage />} />
             <Route path="/resume" element={<FrontPage />} />
             <Route path="/mobile" element={<FrontPageMobile />} />
-
           </Routes>
         </Router>
       
