@@ -17,12 +17,14 @@ import {
   } from "@/components/ui/dropdown-menu"
   
 
-import image from "../images/profile.jpeg";
+import image from "../../assets/images/profile.jpeg";
 import { Button } from "@/components/ui/button"
+import { useNavigate } from "react-router-dom";
 
 {/* use absolute to put it exactly where you want it */}
-
 export default function FrontPageMobile() {
+    const navigate = useNavigate();
+
     return (
         <div className="flex justify-center">
             <Card className="relative w-[600px] h-[700px] overflow-hidden bg-cover bg-center" style={{ backgroundImage: `url(${image})` }}>
@@ -37,10 +39,10 @@ export default function FrontPageMobile() {
                         <Button variant="outline" size="icon">Open</Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent>
-                        <DropdownMenuItem>home</DropdownMenuItem>
-                        <DropdownMenuItem>experience</DropdownMenuItem>
-                        <DropdownMenuItem>projects</DropdownMenuItem>
-                        <DropdownMenuItem>resume</DropdownMenuItem>
+                        <DropdownMenuItem onClick={() => navigate('/')}>home</DropdownMenuItem>
+                        <DropdownMenuItem onClick={() => navigate('/experience')}>experience</DropdownMenuItem>
+                        <DropdownMenuItem onClick={() => navigate('/project')}>projects</DropdownMenuItem>
+                        <DropdownMenuItem onClick={() => navigate('/resume')}>resume</DropdownMenuItem>
                     </DropdownMenuContent>
                     </DropdownMenu>
 
