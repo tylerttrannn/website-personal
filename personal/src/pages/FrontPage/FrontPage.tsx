@@ -1,6 +1,8 @@
 import image from "../../assets/images/profile.jpeg";
 import github from "../../assets/images/github.jpeg";
 import linkedin from "../../assets/images/linkedin.jpg";
+import { EnvelopeClosedIcon } from "@radix-ui/react-icons"
+
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import FrontPageMobile from "./FrontPageMobile";
@@ -12,12 +14,12 @@ function FrontPage() {
     <div>
 
 
-      <div className = "hidden md:flex">
+      <div className = "flex md:hidden">
         <FrontPageMobile/>
       </div>
 
-      <div className="hidden lg:flex flex-row  max-w-6xl ">
-        {/* Image Container */}
+      <div className="hidden lg:flex flex-row max-w-6xl">
+      {/* Image Container */}
         <div className="max-w-2xl">
           <img src={image} className=" object-cover rounded-2xl" alt="Profile" />
         </div>
@@ -55,13 +57,19 @@ function FrontPage() {
             <div className="flex flex-row space-x-5">
               <Button variant="ghost" asChild>
                 <a href="https://github.com/your-profile" target="_blank" rel="noopener noreferrer">
-                  <img src={github} className="w-10 h-10 object-contain" alt="GitHub" />
+                  <img src={github} className="w-8 h-8 object-contain" alt="GitHub" />
                 </a>
               </Button>
 
               <Button variant="ghost" asChild>
                 <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer">
-                  <img src={linkedin} className="w-10 h-10 object-contain" alt="LinkedIn" />
+                  <img src={linkedin} className="w-8 h-8 object-contain" alt="LinkedIn" />
+                </a>
+              </Button>
+
+              <Button variant="ghost" asChild>
+                <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer">
+                  <EnvelopeClosedIcon />
                 </a>
               </Button>
             </div>
